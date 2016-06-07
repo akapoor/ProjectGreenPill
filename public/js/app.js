@@ -1,4 +1,4 @@
-var app = angular.module("instaFame", [])
+/** var app = angular.module("instaFame", [])
 
 app.controller("homeController", function($scope, $http){
 	var redirect_uri = "localhost:3000/"
@@ -21,4 +21,18 @@ app.controller("homeController", function($scope, $http){
 
 	}
 	
-})
+}) */
+
+'use strict';
+
+angular.module('portfolioApp', [ 'ui.router', 'ui.bootstrap', 'ngAnimate'])
+	.config(function ($stateProvider, $urlRouterProvider) {
+
+		$urlRouterProvider.otherwise('/');
+
+		$stateProvider
+			.state('home', {
+				url: '/',
+				component: 'home'	
+			})
+	});
